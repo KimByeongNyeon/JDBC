@@ -2,7 +2,10 @@ package info.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import info.VO.InfoVO;
 
@@ -101,4 +104,38 @@ public class InfoDAO {
 		}
 		return cnt;
 	}
+	
+//	public List<InfoVO> allInfo()throws SQLException{
+//		List<InfoVO> list = new ArrayList<InfoVO>();
+//		
+//		DbConnection dbCon = DbConnection.getInstance();
+//		
+//		//1.
+//		Connection con = null;
+//		PreparedStatement pstmt = null;
+//		ResultSet rs = null;
+//		//2.
+//		try {
+//			String id = "scott";
+//			String pass = "tiger";
+//			con = dbCon.getConnection(id, pass);
+//		//3.
+//			String allInfo = "select num, name, img, age, input_date from work_jdbc ";
+//			pstmt = con.prepareStatement(allInfo);
+//		//4,
+//			InfoVO iVO = null;
+//			
+//			rs = pstmt.executeQuery();
+////			while(rs.next()) {
+////				iVO = new InfoVO(rs.getInt("num"),
+////								 rs.getString("name"),
+////								 rs.getString("img"),
+////								 rs.getInt("age"),
+////								 rs.getString("input_data"));
+////			}
+//		}finally {
+//			dbCon.dbClose(rs, pstmt, con);
+//		}
+//		return list;
+//	}
 }
